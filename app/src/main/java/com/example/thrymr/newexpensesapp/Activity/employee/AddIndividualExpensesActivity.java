@@ -26,6 +26,7 @@ import android.widget.Spinner;
 import com.example.thrymr.newexpensesapp.BuildConfig;
 import com.example.thrymr.newexpensesapp.R;
 import com.example.thrymr.newexpensesapp.Views.CustomEditText;
+import com.example.thrymr.newexpensesapp.Views.CustomFontTextView;
 import com.example.thrymr.newexpensesapp.models.IndividualExpenses;
 
 import java.io.File;
@@ -35,14 +36,16 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Calendar;
 
-public class AddIndividualExpensesActivity extends AppCompatActivity implements View.OnClickListener, View.OnLongClickListener {
+public class AddIndividualExpensesActivity extends AppCompatActivity implements View.OnClickListener{
     private static final int CODE_FOR_CAMERA = 1;
     private static final int CODE_FOR_GALLARY = 2;
     private Spinner categorySpinner;
     private CustomEditText selectDateEdtv, detailsEdtv, totalAmountEdtv;
     private ImageView imagePic;
-    private Button saveButton;
-    public String[] expenses = {"Travel", "Food", "Health", "Furniture", "Grocery", "Gadgets", "Stationary", "OtherThings"};
+    private CustomFontTextView saveButton;
+    private CustomEditText selectImg;
+    public String[] expenses = {"Choose your Expenses", "Travel", "Food", "Health", "Furniture", "Grocery", "Gadgets", "Stationary", "OtherThings"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,24 +53,19 @@ public class AddIndividualExpensesActivity extends AppCompatActivity implements 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Add Expenses");
         setValues();
-
         getEditiableDate();
 
 
     }
 
     private void getEditiableDate() {
-        Intent getEditableDataIntent=getIntent();
-        String dateOfBill=getEditableDataIntent.getStringExtra("dateOfBill");
-        String details=getEditableDataIntent.getStringExtra("details");
-        String amount=getEditableDataIntent.getStringExtra("billAmount");
+        Intent getEditableDataIntent = getIntent();
+        String dateOfBill = getEditableDataIntent.getStringExtra("dateOfBill");
+        String details = getEditableDataIntent.getStringExtra("details");
+        String amount = getEditableDataIntent.getStringExtra("billAmount");
         selectDateEdtv.setText(dateOfBill);
         detailsEdtv.setText(details);
         totalAmountEdtv.setText(amount);
-
-
-
-
 
 
     }
@@ -79,11 +77,13 @@ public class AddIndividualExpensesActivity extends AppCompatActivity implements 
         detailsEdtv = (CustomEditText) findViewById(R.id.details_edtv);
         totalAmountEdtv = (CustomEditText) findViewById(R.id.total_amount_edtv);
         imagePic = (ImageView) findViewById(R.id.image_pic);
-        saveButton = (Button) findViewById(R.id.upload_data_btn);
-
+        saveButton = (CustomFontTextView) findViewById(R.id.upload_data_btn);
+        selectImg= (CustomEditText) findViewById(R.id.upload_bill_et);
+        selectImg.setRawInputType(InputType.TYPE_NULL);
+        selectImg.setFocusable(true);
         saveButton.setOnClickListener(this);
         imagePic.setOnClickListener(this);
-        imagePic.setOnLongClickListener(this);
+        selectImg.setOnClickListener(this);
         selectDateEdtv.setOnClickListener(this);
         ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, expenses);
         spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -103,18 +103,12 @@ public class AddIndividualExpensesActivity extends AppCompatActivity implements 
             case R.id.upload_data_btn:
                 finish();
                 break;
+            case R.id.upload_bill_et:
+                selectImage();
         }
 
     }
 
-
-    @Override
-    public boolean onLongClick(View v) {
-        if (v.getId() == R.id.image_pic) {
-            showingImage();
-        }
-        return true;
-    }
 
     public void setDatepicker() {
         final Calendar c = Calendar.getInstance();
@@ -175,8 +169,11 @@ public class AddIndividualExpensesActivity extends AppCompatActivity implements 
                 try {
                     Bitmap bitmap;
                     BitmapFactory.Options bitmapOptions = new BitmapFactory.Options();
-                    bitmap = BitmapFactory.decodeFile(f.getAbsolutePath(), bitmapOptions);
+
+                    bitmap = BitmapFactory.decodeFile(f.getAbsolutePath(),
+                            bitmapOptions);
                     imagePic.setImageBitmap(bitmap);
+
                     String path = android.os.Environment.getExternalStorageDirectory() + File.separator + "Phoenix" + File.separator + "default";
                     f.delete();
                     OutputStream outFile = null;
@@ -230,7 +227,7 @@ public class AddIndividualExpensesActivity extends AppCompatActivity implements 
 
     }
 
-    public void showingImage() {
+    public void showingDailogImage() {
         AlertDialog.Builder builder = new AlertDialog.Builder(AddIndividualExpensesActivity.this);
         builder.setCancelable(true);
         builder.setView(R.id.image_pic);

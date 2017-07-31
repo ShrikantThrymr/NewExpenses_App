@@ -1,138 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="8dp">
+    android:layout_height="match_parent">
 
-    <LinearLayout
-        android:id="@+id/main_ll"
+
+    <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="3"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_height="wrap_content">
 
-        <com.example.thrymr.newexpensesapp.Views.CustomFontTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:padding="5dp"
-            android:text="@string/add_expenses" />
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="2dp"
-            android:layout_weight="2"
-            android:background="@color/grey"
-            android:layout_gravity="center"></View>
-    </LinearLayout>
-
-    <com.example.thrymr.newexpensesapp.Views.CustomFontTextView
-        android:id="@+id/choose_category_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/main_ll"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/choose_expenses_tv" />
-
-    <LinearLayout
-        android:id="@+id/spinner_ll"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/choose_category_tv"
-        android:background="@drawable/edit_text_border">
-
-        <Spinner
-            android:id="@+id/category_spinner"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="20dp" />
-    </LinearLayout>
+            android:layout_height="wrap_content">
 
-    <com.example.thrymr.newexpensesapp.Views.CustomFontTextView
-        android:id="@+id/date_of_bill_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/spinner_ll"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/date_of_bill" />
+            <RelativeLayout
+                android:id="@+id/snd_rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <com.example.thrymr.newexpensesapp.Views.CustomEditText
-        android:id="@+id/select_date_edtv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/date_of_bill_tv"
-        android:layout_marginTop="3dp"
-        android:background="@drawable/edit_text_border"
-        android:padding="5dp" />
+                <RelativeLayout
+                    android:id="@+id/main_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/d10">
 
-    <com.example.thrymr.newexpensesapp.Views.CustomFontTextView
-        android:id="@+id/details_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/select_date_edtv"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/details" />
+                    <com.example.thrymr.newexpensesapp.Views.CustomFontTextView
+                        android:id="@+id/add_Expense_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/add_expenses" />
 
-    <com.example.thrymr.newexpensesapp.Views.CustomEditText
-        android:id="@+id/details_edtv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/details_tv"
-        android:layout_marginTop="3dp"
-        android:background="@drawable/edit_text_border"
-        android:padding="5dp" />
+                    <com.example.thrymr.newexpensesapp.Views.CustomFontTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/d3"
+                        android:layout_toRightOf="@+id/add_Expense_tv"
+                        android:background="@drawable/dottet_line">
 
-    <com.example.thrymr.newexpensesapp.Views.CustomFontTextView
-        android:id="@+id/total_amount_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/details_edtv"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/total_amount" />
+                    </com.example.thrymr.newexpensesapp.Views.CustomFontTextView>
+                </RelativeLayout>
 
-    <com.example.thrymr.newexpensesapp.Views.CustomEditText
-        android:id="@+id/total_amount_edtv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/total_amount_tv"
-        android:layout_marginTop="3dp"
-        android:background="@drawable/edit_text_border"
-        android:padding="5dp" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/main_ll"
+                    android:layout_margin="@dimen/d15">
 
-    <com.example.thrymr.newexpensesapp.Views.CustomFontTextView
-        android:id="@+id/upload_picture_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/total_amount_edtv"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/upload_picture" />
+                    <com.example.thrymr.newexpensesapp.Views.CustomFontTextView
+                        android:id="@+id/choose_category_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/choose_expenses_tv" />
 
-    <ImageView
-        android:id="@+id/image_pic"
-        android:layout_width="@dimen/d100"
-        android:layout_height="@dimen/d100"
-        android:layout_below="@+id/upload_picture_tv"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/edit_text_border" />
+                    <LinearLayout
+                        android:id="@+id/spinner_ll"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/choose_category_tv"
+                        android:layout_marginLeft="@dimen/d5"
+                        android:layout_marginTop="@dimen/d5"
+                        android:background="@drawable/edit_text_border">
 
-    <Button
-        android:id="@+id/upload_data_btn"
-        android:layout_width="@dimen/d200"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="15dp"
-        android:background="@color/colorPrimary"
-        android:text="@string/save"
-        android:textColor="@android:color/white" />
+                        <Spinner
+                            android:id="@+id/category_spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/d6" />
+                    </LinearLayout>
+
+                    <com.example.thrymr.newexpensesapp.Views.CustomFontTextView
+                        android:id="@+id/date_of_bill_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/spinner_ll"
+                        android:layout_marginTop="@dimen/d10"
+                        android:text="@string/date_of_bill" />
+
+                    <com.example.thrymr.newexpensesapp.Views.CustomEditText
+                        android:id="@+id/select_date_edtv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/date_of_bill_tv"
+                        android:layout_marginLeft="@dimen/d5"
+                        android:layout_marginTop="@dimen/d5"
+                        android:background="@drawable/edit_text_border"
+                        android:drawableRight="@drawable/ic_perm_contact_calendar_black_24dp"
+                        android:padding="5dp" />
+
+                    <com.example.thrymr.newexpensesapp.Views.CustomFontTextView
+                        android:id="@+id/details_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/select_date_edtv"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/details" />
+
+                    <com.example.thrymr.newexpensesapp.Views.CustomEditText
+                        android:id="@+id/details_edtv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/details_tv"
+                        android:layout_marginLeft="@dimen/d5"
+                        android:layout_marginTop="@dimen/d5"
+                        android:background="@drawable/edit_text_border"
+                        android:padding="5dp" />
+
+                    <com.example.thrymr.newexpensesapp.Views.CustomFontTextView
+                        android:id="@+id/total_amount_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/details_edtv"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/total_amount" />
+
+                    <com.example.thrymr.newexpensesapp.Views.CustomEditText
+                        android:id="@+id/total_amount_edtv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/total_amount_tv"
+                        android:layout_marginLeft="@dimen/d5"
+                        android:layout_marginTop="@dimen/d5"
+                        android:background="@drawable/edit_text_border"
+                        android:padding="5dp" />
+
+                    <com.example.thrymr.newexpensesapp.Views.CustomFontTextView
+                        android:id="@+id/upload_picture_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/total_amount_edtv"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/upload_picture" />
+
+                    <com.example.thrymr.newexpensesapp.Views.CustomEditText
+                        android:id="@+id/upload_bill_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/upload_picture_tv"
+                        android:layout_marginLeft="@dimen/d5"
+                        android:layout_marginTop="@dimen/d5"
+                        android:background="@drawable/edit_text_border"
+                        android:drawableRight="@drawable/ic_photo_camera_black_24dp"
+                        android:padding="5dp" />
+
+                    <ImageView
+                        android:id="@+id/image_pic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/upload_bill_et"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        />
+
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/btn_rl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/snd_rl"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/d10"
+                android:background="@color/colorPrimary"
+                android:elevation="@dimen/d5">
+
+                <com.example.thrymr.newexpensesapp.Views.CustomFontTextView
+                    android:id="@+id/upload_data_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/d10"
+                    android:layout_marginTop="@dimen/d10"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/d50"
+                    android:paddingRight="@dimen/d50"
+                    android:text="@string/save"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/d18" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
 
 
 </RelativeLayout>

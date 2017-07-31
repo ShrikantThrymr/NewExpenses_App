@@ -54,7 +54,7 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
 
         public NotificationViewHolder(View itemView) {
             super(itemView);
-            notificationAreaTv = (CustomFontTextView) itemView.findViewById(R.id.notification_area_tv);
+            notificationAreaTv = (CustomFontTextView) itemView.findViewById(R.id.notificastion_area_tv);
             notificationDateTv = (CustomFontTextView) itemView.findViewById(R.id.notification_date_tv);
             notificationStatusTv = (CustomFontTextView) itemView.findViewById(R.id.notification_status_tv);
         }
