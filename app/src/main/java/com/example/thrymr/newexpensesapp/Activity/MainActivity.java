@@ -1,5 +1,6 @@
 package com.example.thrymr.newexpensesapp.Activity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
@@ -8,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -182,6 +184,28 @@ public class MainActivity extends AppCompatActivity implements NavDrawerFragment
                 break;
             case 1:
                 startActivity(new Intent(this,ExpensesActivity.class));
+            case 2:
+                startActivity(new Intent(this,NotificationActivity.class));
+                break;
+           /* case 4:
+                //TODO: Set AlertDialog for @logout
+                new AlertDialog.Builder(this)
+                        .setTitle(R.string.logout)
+                        .setMessage(R.string.like_to_logout)
+                        .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                // TODO: @logout
+                                Intent logoutintent = new Intent(MainActivity.this, LoginActivity.class);
+                                startActivity(logoutintent);
+                            }
+                        })
+                        .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                // TODO: user doesn't want to logout
+                            }
+                        })
+                        .show();
+                break;*/
         }
     }
 

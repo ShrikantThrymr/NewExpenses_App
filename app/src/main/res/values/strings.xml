@@ -51,6 +51,9 @@
     <string name="enter_trip_date_edtv">Enter Trip Date</string>
     <string name="trip_name">Trip Name</string>
 
-
+    <string name="logout">Logout</string>
+    <string name="like_to_logout">Would you like to logout?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 
 </resources>

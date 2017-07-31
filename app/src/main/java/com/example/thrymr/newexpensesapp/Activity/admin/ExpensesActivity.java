@@ -1,5 +1,6 @@
 package com.example.thrymr.newexpensesapp.Activity.admin;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
@@ -8,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -15,6 +17,8 @@ import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.thrymr.newexpensesapp.Activity.LoginActivity;
+import com.example.thrymr.newexpensesapp.Activity.MainActivity;
 import com.example.thrymr.newexpensesapp.Fragments.NavDrawerFragment;
 import com.example.thrymr.newexpensesapp.Fragments.admin.IndividualExpensesViewFragment;
 import com.example.thrymr.newexpensesapp.Fragments.admin.TripExpensesViewFragment;
@@ -186,6 +190,25 @@ public class ExpensesActivity extends AppCompatActivity implements NavDrawerFrag
                 break;
             case 1:
                 startActivity(new Intent(this, ExpensesActivity.class));
+           /* case 4:
+                //TODO: Set AlertDialog for @logout
+                new AlertDialog.Builder(this)
+                        .setTitle(R.string.logout)
+                        .setMessage(R.string.like_to_logout)
+                        .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                // TODO: @logout
+                                Intent logoutintent = new Intent(ExpensesActivity.this, LoginActivity.class);
+                                startActivity(logoutintent);
+                            }
+                        })
+                        .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                // TODO: user doesn't want to logout
+                            }
+                        })
+                        .show();
+                break;*/
         }
     }
 }

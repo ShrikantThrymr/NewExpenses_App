@@ -3,6 +3,15 @@
 
     <item
         is-multidex="true"
+        jar="/home/thrymr/ExpensesApp/NewExpenses_App/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/home/thrymr/ExpensesApp/NewExpenses_App/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_fa31d60f636d3450baf6687fd73cf52d43f80aa7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/thrymr/NewExpensesApp/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
@@ -27,6 +36,15 @@
         revision="26.0.0"
         sha1="e176fd06c2ad5b50a2f5cb4de6000a83a7cb48f5">
         <dex dex="/home/thrymr/NewExpensesApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_53e151d721453e5f395ee96055c7f13df7f1ad2a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/thrymr/ExpensesApp/NewExpenses_App/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="12913814dc4efc11ab44a7c8deb1729c235600a4">
+        <dex dex="/home/thrymr/ExpensesApp/NewExpenses_App/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_1e6d3dcb99ef1d033f4c2a33dc1823b3d39dcebc/classes.dex" />
     </item>
     <item
         is-multidex="true"
