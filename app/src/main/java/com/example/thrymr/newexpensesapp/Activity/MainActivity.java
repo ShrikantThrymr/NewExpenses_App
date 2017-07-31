@@ -14,6 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -29,7 +30,9 @@ import com.example.thrymr.newexpensesapp.Views.CustomFontTextView;
 
 public class MainActivity extends AppCompatActivity implements NavDrawerFragment.NavigationDrawerCallbacks,
         TripExpensesViewFragment.OnFragmentInteractionListener,
-        IndividualExpensesViewFragment.OnFragmentInteractionListener, TripExpensesFragment.OnFragmentInteractionListener, IndividualExpensesFragment.OnFragmentInteractionListener {
+        IndividualExpensesViewFragment.OnFragmentInteractionListener,
+        TripExpensesFragment.OnFragmentInteractionListener,
+        IndividualExpensesFragment.OnFragmentInteractionListener, View.OnClickListener {
 
     private TabLayout tabLayout;
 
@@ -41,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements NavDrawerFragment
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         ((CustomFontTextView) toolbar.findViewById(R.id.text_title)).setText(R.string.employee_expenses);
         setSupportActionBar(toolbar);
+        findViewById(R.id.notification_icon).setOnClickListener(this);
 
         //set Navigation drawable menu
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -216,5 +220,14 @@ public class MainActivity extends AppCompatActivity implements NavDrawerFragment
     @Override
     public void onFragmentInteraction() {
 
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.notification_icon:
+                startActivity(new Intent(MainActivity.this,NotificationActivity.class));
+                break;
+        }
     }
 }

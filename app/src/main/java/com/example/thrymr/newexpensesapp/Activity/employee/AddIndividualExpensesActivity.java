@@ -26,6 +26,7 @@ import android.widget.Spinner;
 import com.example.thrymr.newexpensesapp.BuildConfig;
 import com.example.thrymr.newexpensesapp.R;
 import com.example.thrymr.newexpensesapp.Views.CustomEditText;
+import com.example.thrymr.newexpensesapp.Views.CustomFontTextView;
 import com.example.thrymr.newexpensesapp.models.IndividualExpenses;
 
 import java.io.File;
@@ -41,8 +42,9 @@ public class AddIndividualExpensesActivity extends AppCompatActivity implements 
     private Spinner categorySpinner;
     private CustomEditText selectDateEdtv, detailsEdtv, totalAmountEdtv;
     private ImageView imagePic;
-    private Button saveButton;
-    public String[] expenses = {"Travel", "Food", "Health", "Furniture", "Grocery", "Gadgets", "Stationary", "OtherThings"};
+    private CustomFontTextView saveButton;
+    public String[] expenses = {"Choose your Expenses", "Travel", "Food", "Health", "Furniture", "Grocery", "Gadgets", "Stationary", "OtherThings"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,17 +59,13 @@ public class AddIndividualExpensesActivity extends AppCompatActivity implements 
     }
 
     private void getEditiableDate() {
-        Intent getEditableDataIntent=getIntent();
-        String dateOfBill=getEditableDataIntent.getStringExtra("dateOfBill");
-        String details=getEditableDataIntent.getStringExtra("details");
-        String amount=getEditableDataIntent.getStringExtra("billAmount");
+        Intent getEditableDataIntent = getIntent();
+        String dateOfBill = getEditableDataIntent.getStringExtra("dateOfBill");
+        String details = getEditableDataIntent.getStringExtra("details");
+        String amount = getEditableDataIntent.getStringExtra("billAmount");
         selectDateEdtv.setText(dateOfBill);
         detailsEdtv.setText(details);
         totalAmountEdtv.setText(amount);
-
-
-
-
 
 
     }
@@ -79,7 +77,7 @@ public class AddIndividualExpensesActivity extends AppCompatActivity implements 
         detailsEdtv = (CustomEditText) findViewById(R.id.details_edtv);
         totalAmountEdtv = (CustomEditText) findViewById(R.id.total_amount_edtv);
         imagePic = (ImageView) findViewById(R.id.image_pic);
-        saveButton = (Button) findViewById(R.id.upload_data_btn);
+        saveButton = (CustomFontTextView) findViewById(R.id.upload_data_btn);
 
         saveButton.setOnClickListener(this);
         imagePic.setOnClickListener(this);
