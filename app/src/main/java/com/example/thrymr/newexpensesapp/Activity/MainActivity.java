@@ -184,9 +184,6 @@ public class MainActivity extends AppCompatActivity implements NavDrawerFragment
                 break;
             case 1:
                 startActivity(new Intent(this,ExpensesActivity.class));
-            case 2:
-                startActivity(new Intent(this,NotificationActivity.class));
-                break;
            /* case 4:
                 //TODO: Set AlertDialog for @logout
                 new AlertDialog.Builder(this)

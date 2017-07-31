@@ -48,6 +48,7 @@ public class IndividualExpensesFragment extends Fragment implements View.OnClick
     private OnFragmentInteractionListener mListener;
     private RecyclerView individualRecycle;
     private FloatingActionButton floatingActionButton;
+    private IndividualExpensesAdapter individualExpensesAdapter;
 
     public IndividualExpensesFragment() {
         // Required empty public constructor
@@ -77,6 +78,22 @@ public class IndividualExpensesFragment extends Fragment implements View.OnClick
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+        }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        if (individualExpensesAdapter != null) {
+            individualExpensesAdapter.saveStates(outState);
+        }
+    }
+
+    @Override
+    public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
+        super.onViewStateRestored(savedInstanceState);
+        if (individualExpensesAdapter != null) {
+            individualExpensesAdapter.restoreStates(savedInstanceState);
         }
     }
 
