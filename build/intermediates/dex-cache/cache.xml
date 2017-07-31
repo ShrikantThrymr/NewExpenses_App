@@ -3,57 +3,21 @@
 
     <item
         is-multidex="true"
-        jar="/home/thrymr/ExpensesApp/NewExpenses_App/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jar="/home/thrymr/Expenses App/NewExpenses_App/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="5a9c479ac32a3daa85c8dccf56e070d5a59e38e1">
+        <dex dex="/home/thrymr/Expenses App/NewExpenses_App/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_0d58a308b7f41825f259aea519ae7cbe8f8855fb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/thrymr/Expenses App/NewExpenses_App/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.0"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="/home/thrymr/ExpensesApp/NewExpenses_App/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_fa31d60f636d3450baf6687fd73cf52d43f80aa7/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/thrymr/NewExpensesApp/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.0"
-        sha1="088f67a9ef74fc0304e4f7e56e8cceaf1b9704ec">
-        <dex dex="/home/thrymr/NewExpensesApp/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_88bd2b828aecfde3ab7d15e0859e5a6398dcf262/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/thrymr/NewExpensesApp/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.0"
-        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="/home/thrymr/NewExpensesApp/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_fc74a65d825d6face949fa7fa4f4e671cf92bf0b/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/thrymr/.android/build-cache/f89fc23a2c0bee47f6970b7ce455d1311a3c1bc8/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.0"
-        sha1="e176fd06c2ad5b50a2f5cb4de6000a83a7cb48f5">
-        <dex dex="/home/thrymr/NewExpensesApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_53e151d721453e5f395ee96055c7f13df7f1ad2a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/thrymr/ExpensesApp/NewExpenses_App/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.0"
-        sha1="12913814dc4efc11ab44a7c8deb1729c235600a4">
-        <dex dex="/home/thrymr/ExpensesApp/NewExpenses_App/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_1e6d3dcb99ef1d033f4c2a33dc1823b3d39dcebc/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/thrymr/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.4.0/f36d2d4e3a36b3259aaf9d004d29b4cdc6c1bfb2/picasso-2.4.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.0"
-        sha1="f36d2d4e3a36b3259aaf9d004d29b4cdc6c1bfb2">
-        <dex dex="/home/thrymr/NewExpensesApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/picasso-2.4.0_473387c48a98f4ffac16e238033600a91d3fb693/classes.dex" />
+        <dex dex="/home/thrymr/Expenses App/NewExpenses_App/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_dc4411d19a58cb51a62b05b90c500402508e3102/classes.dex" />
     </item>
 
 </items>
