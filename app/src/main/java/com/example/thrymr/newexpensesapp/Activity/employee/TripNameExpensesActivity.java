@@ -67,12 +67,7 @@ public class TripNameExpensesActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public boolean onPrepareOptionsMenu(Menu menu) {
-        super.onPrepareOptionsMenu(menu);
-        menu.findItem(R.id.notification).setVisible(false);
-        return true;
-    }
+
 
     public ArrayList<TripIndividualModel> setStaticIndividualTripData() {
         listOfTrips = new ArrayList<>();

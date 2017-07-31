@@ -17,6 +17,7 @@ import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ImageView;
@@ -40,7 +41,7 @@ public class AddIndividualExpensesActivity extends AppCompatActivity implements 
     private CustomEditText selectDateEdtv, detailsEdtv, totalAmountEdtv;
     private ImageView imagePic;
     private Button saveButton;
-
+    public String[] expenses = {"Travel", "Food", "Health", "Furniture", "Grocery", "Gadgets", "Stationary", "OtherThings"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,6 +66,9 @@ public class AddIndividualExpensesActivity extends AppCompatActivity implements 
         imagePic.setOnClickListener(this);
         imagePic.setOnLongClickListener(this);
         selectDateEdtv.setOnClickListener(this);
+        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, expenses);
+        spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        categorySpinner.setAdapter(spinnerArrayAdapter);
 
     }
 

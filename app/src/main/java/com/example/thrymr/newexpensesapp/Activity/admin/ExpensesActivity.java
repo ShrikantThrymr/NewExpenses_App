@@ -14,6 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -28,12 +29,14 @@ import com.example.thrymr.newexpensesapp.Fragments.employee.TripExpensesFragment
 import com.example.thrymr.newexpensesapp.R;
 import com.example.thrymr.newexpensesapp.Utils.Constants;
 import com.example.thrymr.newexpensesapp.Views.CustomFontTextView;
+import com.example.thrymr.newexpensesapp.Views.CustomImageView;
 
 public class ExpensesActivity extends AppCompatActivity implements NavDrawerFragment.NavigationDrawerCallbacks,
         TripExpensesFragment.OnFragmentInteractionListener,
-        IndividualExpensesFragment.OnFragmentInteractionListener,TripExpensesViewFragment.OnFragmentInteractionListener {
+        IndividualExpensesFragment.OnFragmentInteractionListener,TripExpensesViewFragment.OnFragmentInteractionListener, View.OnClickListener {
 
     private TabLayout tabLayout;
+    private CustomImageView notification;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +46,7 @@ public class ExpensesActivity extends AppCompatActivity implements NavDrawerFrag
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         ((CustomFontTextView) toolbar.findViewById(R.id.text_title)).setText(R.string.expenses);
         setSupportActionBar(toolbar);
+       findViewById(R.id.notification_icon).setOnClickListener(this);
 
         //set Navigation drawable menu
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -53,10 +57,11 @@ public class ExpensesActivity extends AppCompatActivity implements NavDrawerFrag
         tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         setTabLayout(tabLayout);
         setTabIndicator(0);
-
         startNewFragment(new TripExpensesFragment(), Constants.EMP_TRIP_EXPENSES, false);
 
+
     }
+
 
     private void setTabLayout(final TabLayout tabLayout) {
         tabLayout.addTab(tabLayout.newTab().setCustomView(getCustomTabView(Constants.TRIP)).setTag(Constants.TRIP));
@@ -191,9 +196,7 @@ public class ExpensesActivity extends AppCompatActivity implements NavDrawerFrag
                 break;
             case 1:
                 startActivity(new Intent(this, ExpensesActivity.class));
-            case 2:
-                startActivity(new Intent(this, NotificationActivity.class));
-                break;
+
            /* case 4:
                 //TODO: Set AlertDialog for @logout
                 new AlertDialog.Builder(this)
@@ -213,6 +216,15 @@ public class ExpensesActivity extends AppCompatActivity implements NavDrawerFrag
                         })
                         .show();
                 break;*/
+        }
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.notification_icon:
+                startActivity(new Intent(ExpensesActivity.this,NotificationActivity.class));
+                break;
         }
     }
 }
