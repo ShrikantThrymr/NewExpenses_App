@@ -145,12 +145,12 @@
 
                     <ImageView
                         android:id="@+id/image_pic"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/d150"
+                        android:layout_height="@dimen/d150"
                         android:layout_below="@+id/upload_bill_et"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
-                        />
+                        android:visibility="gone"/>
 
 
                 </RelativeLayout>

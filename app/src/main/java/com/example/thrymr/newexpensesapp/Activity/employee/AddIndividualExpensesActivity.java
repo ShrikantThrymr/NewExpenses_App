@@ -2,6 +2,7 @@ package com.example.thrymr.newexpensesapp.Activity.employee;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -14,6 +15,7 @@ import android.provider.MediaStore;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -98,7 +100,7 @@ public class AddIndividualExpensesActivity extends AppCompatActivity implements 
                 setDatepicker();
                 break;
             case R.id.image_pic:
-                selectImage();
+                //showingDailogImage();
                 break;
             case R.id.upload_data_btn:
                 finish();
@@ -157,6 +159,7 @@ public class AddIndividualExpensesActivity extends AppCompatActivity implements 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         super.onActivityResult(requestCode, resultCode, data);
+        imagePic.setVisibility(View.VISIBLE);
         if (resultCode == RESULT_OK) {
             if (requestCode == CODE_FOR_CAMERA) {
                 File f = new File(Environment.getExternalStorageDirectory().toString());
@@ -172,6 +175,7 @@ public class AddIndividualExpensesActivity extends AppCompatActivity implements 
 
                     bitmap = BitmapFactory.decodeFile(f.getAbsolutePath(),
                             bitmapOptions);
+
                     imagePic.setImageBitmap(bitmap);
 
                     String path = android.os.Environment.getExternalStorageDirectory() + File.separator + "Phoenix" + File.separator + "default";
@@ -227,29 +231,22 @@ public class AddIndividualExpensesActivity extends AppCompatActivity implements 
 
     }
 
-    public void showingDailogImage() {
+    /*public void showingDailogImage() {
+        //inside onPostExecute()
         AlertDialog.Builder builder = new AlertDialog.Builder(AddIndividualExpensesActivity.this);
-        builder.setCancelable(true);
-        builder.setView(R.id.image_pic);
-        builder.setTitle("ExpenesImage");
-        builder.setInverseBackgroundForced(true);
-        builder.setPositiveButton("Accept", new DialogInterface.OnClickListener() {
+        LayoutInflater inflater = getLayoutInflater();
+        View imageLayoutView = inflater.inflate(R.layout.alert_image_view, null);
+        ImageView image = (ImageView) imageLayoutView.findViewById(R.id.alert_image_view);
+        //an URI example
+        image.setImageURI();
+        builder.setView(imageLayoutView)
+                .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
 
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
-        builder.setNegativeButton("Reject", new DialogInterface.OnClickListener() {
-
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
-        AlertDialog alert = builder.create();
-        alert.show();
-
-    }
-
+        builder.create();
+        builder.show();
+    }*/
 }

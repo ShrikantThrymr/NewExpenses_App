@@ -7,8 +7,17 @@
         jumboMode="true"
         optimize="true"
         revision="26.0.0"
-        sha1="14e2879a380aa379b3b1cb3b81c0faa7231733b7">
+        sha1="7f6657187f0450db172cbccab917fe4d23cbe4a0">
         <dex dex="/home/thrymr/Expenses App/NewExpenses_App/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_0d58a308b7f41825f259aea519ae7cbe8f8855fb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/thrymr/Expenses App/NewExpenses_App/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/home/thrymr/Expenses App/NewExpenses_App/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_dc4411d19a58cb51a62b05b90c500402508e3102/classes.dex" />
     </item>
 
 </items>
