@@ -26,6 +26,7 @@ import android.widget.Spinner;
 import com.example.thrymr.newexpensesapp.BuildConfig;
 import com.example.thrymr.newexpensesapp.R;
 import com.example.thrymr.newexpensesapp.Views.CustomEditText;
+import com.example.thrymr.newexpensesapp.models.IndividualExpenses;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -49,6 +50,24 @@ public class AddIndividualExpensesActivity extends AppCompatActivity implements 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Add Expenses");
         setValues();
+
+        getEditiableDate();
+
+
+    }
+
+    private void getEditiableDate() {
+        Intent getEditableDataIntent=getIntent();
+        String dateOfBill=getEditableDataIntent.getStringExtra("dateOfBill");
+        String details=getEditableDataIntent.getStringExtra("details");
+        String amount=getEditableDataIntent.getStringExtra("billAmount");
+        selectDateEdtv.setText(dateOfBill);
+        detailsEdtv.setText(details);
+        totalAmountEdtv.setText(amount);
+
+
+
+
 
 
     }
@@ -87,6 +106,7 @@ public class AddIndividualExpensesActivity extends AppCompatActivity implements 
         }
 
     }
+
 
     @Override
     public boolean onLongClick(View v) {

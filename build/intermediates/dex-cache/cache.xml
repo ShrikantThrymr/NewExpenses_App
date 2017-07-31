@@ -3,21 +3,12 @@
 
     <item
         is-multidex="true"
-        jar="/home/thrymr/Expenses App/NewExpenses_App/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jar="/home/thrymr/.android/build-cache/50f98d67df71a2c3511bcf75e0491f8c1dcf9126/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.0"
-        sha1="5a9c479ac32a3daa85c8dccf56e070d5a59e38e1">
-        <dex dex="/home/thrymr/Expenses App/NewExpenses_App/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_0d58a308b7f41825f259aea519ae7cbe8f8855fb/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/thrymr/Expenses App/NewExpenses_App/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.0"
-        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="/home/thrymr/Expenses App/NewExpenses_App/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_dc4411d19a58cb51a62b05b90c500402508e3102/classes.dex" />
+        sha1="0383ea061ff92aff86cc8e899378170e19319a2c">
+        <dex dex="/home/thrymr/Expenses App/NewExpenses_App/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_e603d350738abc612ed8d55d134d5306966c6993/classes.dex" />
     </item>
 
 </items>

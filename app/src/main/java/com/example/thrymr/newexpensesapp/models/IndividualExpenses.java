@@ -1,10 +1,12 @@
 package com.example.thrymr.newexpensesapp.models;
 
+import java.io.Serializable;
+
 /**
  * Created by thrymr on 28/7/17.
  */
 
-public class IndividualExpenses {
+public class IndividualExpenses  {
     private String expensesName;
     private String expensesDate;
     private String expensesStatus;

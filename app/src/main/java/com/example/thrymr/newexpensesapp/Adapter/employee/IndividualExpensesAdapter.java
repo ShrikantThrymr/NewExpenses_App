@@ -1,11 +1,16 @@
 package com.example.thrymr.newexpensesapp.Adapter.employee;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.chauthai.swipereveallayout.SwipeRevealLayout;
+import com.chauthai.swipereveallayout.ViewBinderHelper;
+import com.example.thrymr.newexpensesapp.Activity.employee.AddIndividualExpensesActivity;
 import com.example.thrymr.newexpensesapp.R;
 import com.example.thrymr.newexpensesapp.Views.CustomFontTextView;
 import com.example.thrymr.newexpensesapp.Views.CustomImageView;
@@ -22,6 +27,8 @@ public class IndividualExpensesAdapter extends RecyclerView.Adapter<RecyclerView
     private List<IndividualExpenses> individualExpensesList;
     private IndividualExpensesItemClickListner individualExpensesItemClickListner;
     private Context context;
+    private final ViewBinderHelper binderHelper = new ViewBinderHelper();
+
 
     public IndividualExpensesAdapter(Context context, List<IndividualExpenses> individualExpensesList, IndividualExpensesItemClickListner individualExpensesItemClickListner) {
         this.context = context;
@@ -38,6 +45,11 @@ public class IndividualExpensesAdapter extends RecyclerView.Adapter<RecyclerView
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         DetailsViewHolder detailsViewHolder = (DetailsViewHolder) holder;
         final IndividualExpenses individualExpenses = individualExpensesList.get(position);
+        if (individualExpensesList != null && 0 <= position && position < individualExpensesList.size()) {
+            binderHelper.bind(detailsViewHolder.swipeLayout, String.valueOf(individualExpenses));
+            detailsViewHolder.deleteItem(individualExpenses);
+            detailsViewHolder.editItem(individualExpenses);
+        }
         if (individualExpenses != null) {
             if (individualExpenses.getExpensesName() != null) {
                 detailsViewHolder.tripAreaTv.setText(individualExpenses.getExpensesName());
@@ -67,10 +79,21 @@ public class IndividualExpensesAdapter extends RecyclerView.Adapter<RecyclerView
             }
         });
 
+
+    }
+
+    public void saveStates(Bundle outState) {
+        binderHelper.saveStates(outState);
+    }
+
+    public void restoreStates(Bundle inState) {
+        binderHelper.restoreStates(inState);
     }
 
     @Override
     public int getItemCount() {
+        if (individualExpensesList == null)
+            return 0;
         return individualExpensesList.size();
     }
 
@@ -78,6 +101,9 @@ public class IndividualExpensesAdapter extends RecyclerView.Adapter<RecyclerView
     private class DetailsViewHolder extends RecyclerView.ViewHolder {
 
 
+        private final SwipeRevealLayout swipeLayout;
+        private final CustomFontTextView deleteExpenses;
+        private final CustomFontTextView editExpenses;
         private CustomImageView nextScreenTv;
         private CustomFontTextView tripCostTv;
         private CustomFontTextView tripStatusTv;
@@ -86,10 +112,37 @@ public class IndividualExpensesAdapter extends RecyclerView.Adapter<RecyclerView
 
         public DetailsViewHolder(View view) {
             super(view);
+            swipeLayout = (SwipeRevealLayout) itemView.findViewById(R.id.swipe_layout);
             tripAreaTv = (CustomFontTextView) view.findViewById(R.id.trip_area_tv);
             tripDateTv = (CustomFontTextView) view.findViewById(R.id.trip_date_tv);
             tripStatusTv = (CustomFontTextView) view.findViewById(R.id.trip_status_tv);
             tripCostTv = (CustomFontTextView) view.findViewById(R.id.trip_cost_tv);
+            deleteExpenses = (CustomFontTextView) view.findViewById(R.id.delete_item);
+            editExpenses = (CustomFontTextView) view.findViewById(R.id.edit_item);
+        }
+
+        public void deleteItem(IndividualExpenses individualExpenses) {
+            deleteExpenses.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    individualExpensesList.remove(getAdapterPosition());
+                    notifyItemRemoved(getAdapterPosition());
+                }
+            });
+        }
+
+        public void editItem(final IndividualExpenses individualExpenses) {
+            editExpenses.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent editExpeneseIntent = new Intent(context, AddIndividualExpensesActivity.class);
+                    editExpeneseIntent.putExtra("expensesName", "Cab");
+                    editExpeneseIntent.putExtra("dateOfBill", "12-12-2017");
+                    editExpeneseIntent.putExtra("billAmount","$200");
+                    editExpeneseIntent.putExtra("details","I went office to ameerpet");
+                    context.startActivity(editExpeneseIntent);
+                }
+            });
         }
     }
 }

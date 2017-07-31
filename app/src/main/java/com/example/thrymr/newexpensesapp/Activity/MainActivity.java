@@ -29,7 +29,7 @@ import com.example.thrymr.newexpensesapp.Views.CustomFontTextView;
 
 public class MainActivity extends AppCompatActivity implements NavDrawerFragment.NavigationDrawerCallbacks,
         TripExpensesViewFragment.OnFragmentInteractionListener,
-        IndividualExpensesViewFragment.OnFragmentInteractionListener,TripExpensesFragment.OnFragmentInteractionListener,IndividualExpensesFragment.OnFragmentInteractionListener {
+        IndividualExpensesViewFragment.OnFragmentInteractionListener, TripExpensesFragment.OnFragmentInteractionListener, IndividualExpensesFragment.OnFragmentInteractionListener {
 
     private TabLayout tabLayout;
 
@@ -183,9 +183,7 @@ public class MainActivity extends AppCompatActivity implements NavDrawerFragment
                 startNewFragment(new TripExpensesViewFragment(), Constants.employee_name_fragment, false);
                 break;
             case 1:
-                startActivity(new Intent(MainActivity.this,ExpensesActivity.class));
-            case 2:
-                startActivity(new Intent(MainActivity.this,NotificationActivity.class));
+                startActivity(new Intent(MainActivity.this, ExpensesActivity.class));
                 break;
            /* case 4:
                 //TODO: Set AlertDialog for @logout

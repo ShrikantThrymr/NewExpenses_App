@@ -196,6 +196,7 @@ public class ExpensesActivity extends AppCompatActivity implements NavDrawerFrag
                 break;
             case 1:
                 startActivity(new Intent(this, ExpensesActivity.class));
+                break;
 
            /* case 4:
                 //TODO: Set AlertDialog for @logout
